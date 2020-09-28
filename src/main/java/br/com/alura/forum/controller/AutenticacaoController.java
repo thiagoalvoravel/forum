@@ -27,6 +27,7 @@ public class AutenticacaoController {
 	@Autowired
 	private TokenService tokenService;
 	
+	//Método para criar um token com AuthenticationManager
 	@PostMapping()
 	public ResponseEntity<TokenDto> autenticar(@RequestBody @Valid LoginForm loginForm) {
 		UsernamePasswordAuthenticationToken dadosLogin = loginForm.converter(); 
