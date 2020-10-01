@@ -1,7 +1,6 @@
 package br.com.alura.forum.controller.form;
 
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Length;
 
