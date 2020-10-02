@@ -17,9 +17,15 @@ public class AutenticacaoService implements UserDetailsService {
 	@Autowired
 	private UsuarioRepository usuarioRepository; 
 
+	//Regra para autenticar usuário
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		Optional<Usuario> usuario = usuarioRepository.findByEmail(username);
+		
+		/*
+		 * return usuarioRepository.findByEmail(username)
+				.orElseThrow(new UsernameNotFoundException("Dados inválidos"));
+		 */
 		
 		if(usuario.isPresent()) {
 			return usuario.get();

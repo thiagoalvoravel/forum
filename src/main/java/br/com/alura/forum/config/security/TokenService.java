@@ -30,6 +30,7 @@ public class TokenService {
 				.setSubject(usuarioLogado.getId().toString())
 				.setIssuedAt(hoje)
 				.setExpiration(dataExpiracao)
+				//Chave usada para assinatura
 				.signWith(SignatureAlgorithm.HS256, secret)
 				.compact();
 	}

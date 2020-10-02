@@ -93,6 +93,8 @@ public class Usuario implements UserDetails {
 		this.perfis = perfis;
 	}
 
+	//Relacionar quais os perfis com permissões de acesso do usuário 
+	//o Spring Security valida 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		return this.getPerfis();

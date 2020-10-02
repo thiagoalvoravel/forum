@@ -35,7 +35,9 @@ public class AutenticacaoController {
 		UsernamePasswordAuthenticationToken dadosLogin = loginForm.converter(); 
 		
 		try {
+			//Autentica o usuário com base no email e senha
 			Authentication authentication = authManager.authenticate(dadosLogin);
+			//Gera token para que o usuário utilizar nas demais requisições
 			String token = tokenService.gerarToken(authentication);			
 			return ResponseEntity.ok(new TokenDto(token, "Bearer"));
 		} catch (AuthenticationException e) {
